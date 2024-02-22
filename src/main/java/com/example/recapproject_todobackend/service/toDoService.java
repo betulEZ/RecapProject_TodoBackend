@@ -31,7 +31,7 @@ public class toDoService {
 
     public toDo update(String id, toDo toDo) {
         toDo temp=repo.findById(id).orElseThrow();
-        temp.setMessage(toDo.getMessage());
+        temp.setDescription(toDo.getDescription());
         temp.setStatus(toDo.getStatus());
         return repo.save(temp);
     }

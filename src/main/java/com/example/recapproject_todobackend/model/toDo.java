@@ -14,6 +14,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class toDo {
 
     private String id;
-    private String message;
-    public toDoStatus status;
+    private String description;
+    private toDoStatus status;
 }

@@ -43,7 +43,7 @@ class toDoControllerTest {
                                 [
                                  {
                                      "id": "1",
-                                     "message": "message1",
+                                     "description": "message1",
                                      "status": "OPEN"
                                  }
                                 ]
@@ -64,7 +64,7 @@ class toDoControllerTest {
                 .andExpect(content().json("""
                             {
                                 "id": "1",
-                                "message": "message1",
+                                "description": "message1",
                                 "status": "OPEN"
                             }
                         """));
@@ -78,13 +78,13 @@ class toDoControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("""
                         {
-                            "message": "message1"
+                            "description": "message1"
                         }
                         """))
                 .andExpect(status().isOk())
                 .andExpect(content().json("""
                         {
-                            "message": "message1"
+                            "description": "message1"
                         }
                         """
                 ))
@@ -116,7 +116,7 @@ class toDoControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("""
                                     {
-                                        "message": "test-description-2",
+                                        "description": "test-description-2",
                                         "status": "IN_PROGRESS"
                                     }
                                 """))
@@ -125,7 +125,7 @@ class toDoControllerTest {
                 .andExpect(content().json("""
                             {
                                 "id": "1",
-                                "message": "test-description-2",
+                                "description": "test-description-2",
                                 "status": "IN_PROGRESS"
                             }
                         """));

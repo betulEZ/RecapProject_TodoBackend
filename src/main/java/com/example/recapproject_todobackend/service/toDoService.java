@@ -34,4 +34,8 @@ public class toDoService {
         temp.setStatus(toDo.getStatus());
         return repo.save(temp);
     }
+
+    public toDo getById(String id) {
+        return repo.findById(id).orElseThrow();
+    }
 }

@@ -19,6 +19,11 @@ public class toDoController {
         return service.getAll();
     }
 
+    @GetMapping("/{id}")
+    public toDo getById(@PathVariable String id){
+        return service.getById(id);
+    }
+
     @PostMapping
     public toDo saveNew(@RequestBody toDo todo){
         return service.saveNew(todo);
@@ -28,6 +33,7 @@ public class toDoController {
     public void delete(@PathVariable String id){
        service.delete(id);
     }
+
     @PutMapping("/{id}")
     public toDo update(@PathVariable String id,@RequestBody toDo toDo){
         return service.update(id,toDo);

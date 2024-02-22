@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Service
 @RequiredArgsConstructor
@@ -36,6 +37,6 @@ public class toDoService {
     }
 
     public toDo getById(String id) {
-        return repo.findById(id).orElseThrow();
+        return repo.findById(id)  .orElseThrow(() -> new NoSuchElementException("Todo with id: " + id + " not found!"));
     }
 }
